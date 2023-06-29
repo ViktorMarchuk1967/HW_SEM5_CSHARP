@@ -3,6 +3,7 @@
 [345, 897, 568, 234] -> 2
 */
 
+/*
 int InputNum(string message) //ввод параметров
 {
     Console.Write(message);
@@ -49,7 +50,7 @@ Console.WriteLine(txt);
 CountEvenArray(myArray);
 int numEven = CountEvenArray(myArray);
 Console.WriteLine(numEven);
-
+*/
 
 
 
@@ -58,6 +59,49 @@ Console.WriteLine(numEven);
 [3, 7, 23, 12] -> 19
 [-4, -6, 89, 6] -> 0
 */
+
+int InputNum(string message) //ввод параметров
+{
+    Console.Write(message);
+    return int.Parse(Console.ReadLine()!);
+}
+
+int[] CreateArray(int size) //создание массива (ссылки на массив) с заданным размером 
+{
+    return new int[size];
+}
+
+void FillArray(int[] array) //заполнение массива
+{
+    Random rnd = new Random(); // создание экземпляра класса Random
+    for (int i = 0; i < array.Length; i++)
+        array[i] = rnd.Next(-99, 100); 
+}                                      
+
+int SumOddArray(int[] array) //изменение массива
+{
+    int sum = 0;
+    for (int i = 1; i < array.Length; i += 2)
+        sum += array[i]; 
+    return sum;
+}        
+
+string PrintArray(int[] array) //вывод массива в строку
+{
+    string res = String.Empty;
+    for (int i = 0; i < array.Length; i++)
+        res += array[i] + " ";
+    return res;
+}
+
+int size = InputNum("Введите размер массива: ");
+int[] myArray = CreateArray(size);
+FillArray(myArray);
+string txt = PrintArray(myArray);
+Console.WriteLine(txt);
+SumOddArray(myArray);
+int numOdd = SumOddArray(myArray);
+Console.WriteLine(numOdd);
 
 
 /*
