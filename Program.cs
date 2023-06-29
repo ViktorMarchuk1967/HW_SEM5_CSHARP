@@ -60,6 +60,7 @@ Console.WriteLine(numEven);
 [-4, -6, 89, 6] -> 0
 */
 
+/*
 int InputNum(string message) //ввод параметров
 {
     Console.Write(message);
@@ -102,6 +103,7 @@ Console.WriteLine(txt);
 SumOddArray(myArray);
 int numOdd = SumOddArray(myArray);
 Console.WriteLine(numOdd);
+*/
 
 
 /*
@@ -109,4 +111,53 @@ Console.WriteLine(numOdd);
 [3.22, 4.2, 1.15, 77.15, 65.2] => 77.15 - 1.15 = 76
 */
 
+int InputNum(string message) //ввод параметров
+{
+    Console.Write(message);
+    return int.Parse(Console.ReadLine()!);
+}
 
+double[] CreateArray(int size) //создание массива (ссылки на массив) с заданным размером 
+{
+    return new double[size];
+}
+
+void FillArray(double[] array) //заполнение массива
+{
+    Random rnd = new Random(); // создание экземпляра класса Random
+    for (int i = 0; i < array.Length; i++)
+        array[i] = rnd.NextDouble() + rnd.Next(0, 100);
+
+}
+
+
+double MinMaxArray(double[] array) //изменение массива
+{
+    int max = 0;
+    int min = 0;
+
+    for (int i = 1; i < array.Length; i++)
+    {
+        if (array[max] < array[i]) max = i;
+        if (array[min] > array[i]) min = i;
+    }
+    double res = array[max] - array[min];
+    return res;
+}
+
+string PrintArray(double[] array) //вывод массива в строку
+{
+    string res = String.Empty;
+    for (int i = 0; i < array.Length; i++)
+        res += Math.Round(array[i], 2) + " ";
+    return res;
+}
+
+int size = InputNum("Введите размер массива: ");
+double[] myArray = CreateArray(size);
+FillArray(myArray);
+string txt = PrintArray(myArray);
+Console.WriteLine(txt);
+//SumOddArray(myArray);
+double res = MinMaxArray(myArray);
+Console.WriteLine(Math.Round(res, 2));
