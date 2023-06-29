@@ -3,7 +3,7 @@
 [345, 897, 568, 234] -> 2
 */
 
-/*
+
 int InputNum(string message) //ввод параметров
 {
     Console.Write(message);
@@ -20,7 +20,6 @@ void FillArray(int[] array) //заполнение массива
     Random rnd = new Random(); // создание экземпляра класса Random
     for (int i = 0; i < array.Length; i++)
         array[i] = rnd.Next(100, 1000); 
-                                      // array[i] = new Random().Next(min, max + 1)
 }
 
 int CountEvenArray(int[] array) //изменение массива
@@ -30,9 +29,6 @@ int CountEvenArray(int[] array) //изменение массива
         if (item % 2 == 0) countEvenNum ++; 
     return countEvenNum;
 }        
-
-
-
 
 string PrintArray(int[] array) //вывод массива в строку
 {
@@ -47,11 +43,8 @@ int[] myArray = CreateArray(size);
 FillArray(myArray);
 string txt = PrintArray(myArray);
 Console.WriteLine(txt);
-CountEvenArray(myArray);
 int numEven = CountEvenArray(myArray);
 Console.WriteLine(numEven);
-*/
-
 
 
 /*
@@ -110,6 +103,7 @@ Console.WriteLine(numOdd);
 [3.22, 4.2, 1.15, 77.15, 65.2] => 77.15 - 1.15 = 76
 */
 
+/*
 int InputNum(string message) //ввод параметров
 {
     Console.Write(message);
@@ -126,11 +120,9 @@ void FillArray(double[] array) //заполнение массива
     Random rnd = new Random(); // создание экземпляра класса Random
     for (int i = 0; i < array.Length; i++)
         array[i] = rnd.NextDouble() + rnd.Next(0, 100);
-
 }
 
-
-double MinMaxArray(double[] array) 
+double MinMaxArray(double[] array)
 {
     int max = 0;
     int min = 0;
@@ -159,3 +151,4 @@ string txt = PrintArray(myArray);
 Console.WriteLine(txt);
 double res = MinMaxArray(myArray);
 Console.WriteLine(Math.Round(res, 2));
+*/
