@@ -79,7 +79,7 @@ void FillArray(int[] array) //заполнение массива
         array[i] = rnd.Next(-99, 100); 
 }                                      
 
-int SumOddArray(int[] array) //изменение массива
+int SumOddArray(int[] array) 
 {
     int sum = 0;
     for (int i = 1; i < array.Length; i += 2)
@@ -100,7 +100,6 @@ int[] myArray = CreateArray(size);
 FillArray(myArray);
 string txt = PrintArray(myArray);
 Console.WriteLine(txt);
-SumOddArray(myArray);
 int numOdd = SumOddArray(myArray);
 Console.WriteLine(numOdd);
 */
@@ -131,7 +130,7 @@ void FillArray(double[] array) //заполнение массива
 }
 
 
-double MinMaxArray(double[] array) //изменение массива
+double MinMaxArray(double[] array) 
 {
     int max = 0;
     int min = 0;
@@ -158,6 +157,5 @@ double[] myArray = CreateArray(size);
 FillArray(myArray);
 string txt = PrintArray(myArray);
 Console.WriteLine(txt);
-//SumOddArray(myArray);
 double res = MinMaxArray(myArray);
 Console.WriteLine(Math.Round(res, 2));
